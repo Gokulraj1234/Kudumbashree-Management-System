@@ -1,0 +1,38 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/img21.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	<h1 style="color: white;">Events</h1>
+	<form method="post" enctype="multipart/form-data">
+		<table class="table table-striped">
+		<tr>
+			<th style="color: white;">Event</th>
+			<td><input type="text" name="event"></td>
+		</tr>
+		<tr>
+			<th style="color: white;">Details</th>
+			<td><input type="text" name="details"></td>
+		</tr>
+		<tr>
+			<th style="color: white;">Image</th>
+			<td><input type="file" name="image"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" value="Add"></td>
+		</tr>
+	</form>
+</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}

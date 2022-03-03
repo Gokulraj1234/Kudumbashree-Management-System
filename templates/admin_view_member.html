@@ -1,0 +1,44 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/mem.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	
+	<h1>Members</h1>
+	<table class="table table-striped">
+		<tr>
+			<th style="color: white;">Firstname</th>
+			<th style="color: white;">Lastname</th>
+			<th style="color: white;">Place</th>
+			<th style="color: white;">Phone</th>
+			<th style="color: white;">Email</th>
+			
+		</tr>
+		{% for row in data['member'] %}
+		<tr>
+			<td style="color: white;">{{ row['firstname'] }}</td>
+			<td style="color: white;">{{ row['lastname'] }}</td>
+			<td style="color: white;">{{ row['place'] }}</td>
+			<td style="color: white;">{{ row['phone'] }}</td>
+			<td style="color: white;">{{ row['email'] }}</td>
+			{% if row['usertype']=="pending" %}
+				<td style="color: white;"><a href="?action=accept&l_id={{ row['login_id'] }}">Accept</a></td>
+				<td ><a href="?action=reject&l_id={{ row['login_id'] }}">Reject</a></td>
+			
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}

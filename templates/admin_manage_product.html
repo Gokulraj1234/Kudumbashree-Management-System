@@ -1,0 +1,97 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/prod41.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+
+	{% if data['pro'] %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form method="post" enctype="multipart/form-data">
+		<table class="table table-striped">
+			<tr>
+				<td style="color: white;">Product Name</td>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,50}" title="enter valid name" name="productname" value="{{data['pro'][0]['productname']}}"></td>
+			</tr>
+			<tr>
+				<td style="color: white;">Details</td>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,50}" title="enter valid name" name="details" value="{{data['pro'][0]['details']}}"></td>	
+			</tr>
+			<tr>
+				<td style="color: white;">Image</td>
+				<td><input type="file" name="image" value="{{data['pro'][0]['image']}}"></td>	
+			</tr>
+			
+			<tr>
+				<td align="center" colspan="2"><input type="submit" name="submit" value="Update" class="btn btn-primary"></td>
+			</tr>
+		</table>
+	</form>
+	{% else %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h3 style="color: white;">ADD Products</h3>
+	<form method="post" enctype="multipart/form-data">
+		<table class="table table-striped">
+			<tr>
+				<td style="color: white;">Product Name</td>
+				<td style="color: white;"><input type="text" name="productname"></td>
+			</tr>
+			<tr>
+				<td style="color: white;">Details</td>
+				<td style="color: white;"><input type="text" name="details"></td>	
+			</tr>
+			<tr>
+				<td style="color: white;">Image</td>
+				<td><input type="file" name="image"></td>	
+			</tr>
+			
+			<tr>
+				<td align="center" colspan="2"><input type="submit" name="submit" value="Add" class="btn btn-primary"></td>
+			</tr>
+		</table>
+	</form>
+	{% endif %}
+	<h3>PRODUCTS</h3>
+	{% if data['product'] %}
+	<table class="table table-striped">
+		<tr>
+			<th style="color: white;">Product Name</th>
+			<th style="color: white;">Details</th>
+			<th style="color: white;">Image</th>
+		</tr>
+		{% for row in data['product'] %}
+		<tr>
+			<td style="color: white;">{{ row['productname'] }}</td>
+			<td style="color: white;">{{ row['details'] }}</td>
+			<td><img style="width: 100px;height: 100px;" name="image" src="/{{ row['image'] }}"></td>
+			<td><a href="?action=update&pid={{row['product_id']}}">Edit</a></td>
+			<td><a href="?action=delete&pid={{row['product_id']}}">Delete</a></td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}

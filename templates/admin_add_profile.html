@@ -1,0 +1,48 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/prof.png" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	<h1>Profile</h1>
+	<form method="post" >
+		<table class="table table-striped">
+			<div class="table table-dark">
+			<tr>
+				<td style="color: white;">Firstname</td>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,50}" title="enter valid name" class="form-control" name="firstname"></td>
+			</tr>
+			
+			<tr>
+				<td style="color: white;">Lastname</td>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,50}" title="enter valid name" class="form-control" name="lastname"></td>	
+			</tr>
+			<tr>
+				<td style="color: white;">Place</td>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,50}" title="enter valid place" class="form-control" name="place"></td>	
+			</tr>
+			<tr>
+				<td style="color: white;">Phone</td>
+				<td><input type="text" pattern="[0-9]{10}" title="enter valid phone" class="form-control" name="phone"></td>	
+			</tr>
+			<tr>
+				<td style="color: white;">Email</td>
+				<td><input type="email" class="form-control" name="email"></td>	
+			</tr>
+			</div>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" class="btn btn-primary" name="submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}

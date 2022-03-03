@@ -1,0 +1,40 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/mem.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	
+	<h1>SAVINGS</h1>
+	<table class="table table-striped">
+		<tr>
+			<th style="color: white;">Member</th>
+			<th style="color: white;">Amount</th>
+			<th style="color: white;">Date</th>
+			<th style="color: white;">Balance</th>
+			
+			
+		</tr>
+		{% for row in data['acc'] %}
+		<tr>
+			<td style="color: white;">{{ row['firstname'] }}</td>
+			<td style="color: white;">{{ row['amount'] }}</td>
+			<td style="color: white;">{{ row['date'] }}</td>
+			<td style="color: white;">{{ row['balance'] }}</td>
+			
+			
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}

@@ -1,0 +1,37 @@
+<!-- {% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/prod41.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	<h1><font color="#00e6e6">Product Request<br></h1>
+	<table>
+		<tr>
+			<th style="color: white;">Product Name</th>
+			<th style="color: white;">  Username</th>
+			<th style="color: white;">  Status</th>
+		</tr>
+		{% for row in data['req'] %}
+		<tr>
+			<td style="color: white;">{{ row['productname'] }}</td>
+			<td style="color: white;">{{ row['firstname'] }}</td>
+			<td style="color: white;">{{ row['status'] }}</td>
+			{% if row['status']=="pending" %}
+				<td><a href="?action=accept&rid={{ row['request_id'] }}">Accept</a></td>
+				<td><a href="?action=reject&rid={{ row['request_id'] }}">Reject</a></td>
+			{% endif %}	
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %} -->

@@ -1,0 +1,41 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/loan.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	<h1>Loan Request</h1>
+	<table class="table table-striped">
+		<tr>
+			<th style="color: white;">Member Name</th>
+			<th style="color: white;">Amount</th>
+			<th style="color: white;">Date</th>
+			<th style="color: white;">Status</th>
+		</tr>
+		{% for row in data['loan'] %}
+		<tr>
+			<td style="color: white;">{{ row['firstname'] }}</td>
+			<td style="color: white;">{{ row['amount'] }}</td>
+			<td style="color: white;">{{ row['date'] }}</td>
+			<td style="color: white;">{{ row['status'] }}</td>
+			{% if row['status'] =="pending" %}
+				<td><a href="?action=accept&lr_id={{ row['loanrequest_id'] }}">Accept</a></td>
+				<td><a href="?action=reject&lr_id={{ row['loanrequest_id'] }}">Reject</a></td>
+			{% elif row['status'] =="accept" %}
+				<td><a href="admin_view_payment?lr_id={{ row['loanrequest_id'] }}">Payment</a></td>
+			{% endif %}		
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+{% include 'footer.html' %}

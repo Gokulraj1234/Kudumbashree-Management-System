@@ -1,0 +1,33 @@
+{% include 'admin_header.html' %}
+<section class="slideshow">   
+                <div class="slick-custom">
+                    <img src="/static/images/slideshow/loan.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+<center>
+	<h1>Payment</h1>
+	<table>
+		<tr>
+			<th style="color: white;">Member Name</th>
+			<th style="color: white;">Amount</th>
+			<th style="color: white;">Date</th>
+		</tr>
+		{% for row in data['pay'] %}
+		<tr>
+			<td style="color: white;">{{ row['firstname'] }}</td>
+			<td style="color: white;">{{ row['pamount'] }}</td>
+			<td style="color: white;">{{ row['date'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% include 'footer.html' %}
